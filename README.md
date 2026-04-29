@@ -1,6 +1,8 @@
 # Config-Driven Dynamic Application Builder
 
 A config-first system that converts JSON configuration into a fully functioning runtime application: UI (forms & tables), backend APIs (dynamic CRUD routes), and a database schema (Prisma → PostgreSQL). Instead of hardcoding entities, relationships, forms, or endpoints, you declare intent in configuration and the system generates the runtime app from that single source of truth: config → runtime app generation.
+ 
+Live demo: [dynamic-application-runtime.vercel.app](https://dynamic-application-runtime.vercel.app) — deployed on Vercel.
 
 ---
 

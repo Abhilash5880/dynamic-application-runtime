@@ -59,7 +59,7 @@ export const DashboardView = ({ appId, view, entities, refreshKey = 0 }: Props) 
   }, [appId, view, entities, refreshKey]);
 
   return (
-    <Card className="p-6 shadow-card">
+    <Card className="p-6 border border-border bg-card shadow-card">
       <h3 className="text-lg font-semibold mb-4">{view.title}</h3>
       {loading ? (
         <div className="py-8 flex items-center justify-center text-muted-foreground">
@@ -68,12 +68,12 @@ export const DashboardView = ({ appId, view, entities, refreshKey = 0 }: Props) 
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {results.map((r, i) => (
-            <div key={i} className="rounded-xl bg-gradient-to-br from-secondary to-background border p-5">
+            <div key={i} className="rounded-xl border border-border bg-surface p-5">
               <div className="flex items-center justify-between text-muted-foreground text-xs uppercase tracking-wide">
                 <span>{r.label}</span>
                 <TrendingUp className="h-4 w-4 text-primary" />
               </div>
-              <div className="text-3xl font-bold mt-2 text-gradient">{r.value}</div>
+              <div className="text-3xl font-bold mt-2 text-foreground">{r.value}</div>
             </div>
           ))}
         </div>

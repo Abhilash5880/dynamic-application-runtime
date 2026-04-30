@@ -52,7 +52,7 @@ export const TableView = ({ appId, view, entity, refreshKey = 0 }: Props) => {
   };
 
   return (
-    <Card className="p-6 shadow-card">
+    <Card className="p-6 border border-border bg-card shadow-card">
       <div className="flex items-center justify-between mb-4 gap-2 flex-wrap">
         <h3 className="text-lg font-semibold">{view.title}</h3>
         <CsvImporter

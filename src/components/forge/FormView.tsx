@@ -43,7 +43,7 @@ export const FormView = ({ appId, view, entity, onCreated }: Props) => {
   };
 
   return (
-    <Card className="p-6 shadow-card">
+    <Card className="p-6 border border-border bg-card shadow-card">
       <h3 className="text-lg font-semibold mb-4">{view.title}</h3>
       <form onSubmit={submit} className="grid gap-4 md:grid-cols-2">
         {entity.fields.map((f) => (

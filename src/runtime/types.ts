@@ -1,4 +1,4 @@
-// Forge config types — intentionally permissive. The runtime tolerates
+// Dynamic Application Runtime config types — intentionally permissive. The runtime tolerates
 // missing/unknown fields and degrades gracefully.
 
 export type FieldType =

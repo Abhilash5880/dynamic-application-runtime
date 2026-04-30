@@ -87,9 +87,9 @@ const Apps = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-mesh">
+    <div className="min-h-screen bg-background">
       <TopBar />
-      <main className="container py-8 max-w-5xl">
+      <main className="container mx-auto py-8 max-w-5xl px-4">
         <div className="flex items-end justify-between mb-6 gap-3 flex-wrap">
           <div>
             <h1 className="text-3xl sm:text-4xl font-bold">{t("nav.apps")}</h1>
@@ -97,7 +97,7 @@ const Apps = () => {
           </div>
           <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-              <Button className="gap-2 bg-gradient-primary hover:opacity-90 transition-opacity">
+              <Button className="gap-2">
                 <Plus className="h-4 w-4" /> {t("apps.new")}
               </Button>
             </DialogTrigger>
@@ -168,7 +168,7 @@ const Apps = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.05 }}
                 >
-                  <Card className="p-5 shadow-card hover:shadow-elegant transition-shadow group">
+                  <Card className="p-5 border border-border shadow-card transition-shadow hover:shadow-md group">
                     <div className="flex items-start justify-between gap-2">
                       <h3 className="font-semibold text-lg leading-tight">{r.name}</h3>
                       <Button

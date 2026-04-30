@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { Sparkles, LogOut } from "lucide-react";
+import { LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { LocaleSwitcher } from "./LocaleSwitcher";
@@ -13,18 +13,15 @@ export const TopBar = ({ showSignOut = true }: { showSignOut?: boolean }) => {
     navigate("/auth");
   };
   return (
-    <header className="sticky top-0 z-30 backdrop-blur-md bg-background/70 border-b">
-      <div className="container flex h-14 items-center justify-between gap-2">
-        <Link to="/" className="flex items-center gap-2 font-bold">
-          <span className="grid place-items-center h-8 w-8 rounded-lg bg-gradient-primary text-primary-foreground shadow-elegant">
-            <Sparkles className="h-4 w-4" />
-          </span>
-          <span className="text-lg">Forge</span>
+    <header className="sticky top-0 z-30 bg-background border-b border-border">
+      <div className="container mx-auto flex h-14 items-center justify-between gap-2 px-4">
+        <Link to="/" className="text-lg font-semibold text-foreground">
+          Dynamic Application Runtime
         </Link>
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-2">
           <LocaleSwitcher />
           {showSignOut && (
-            <Button variant="ghost" size="sm" onClick={signOut} className="gap-2">
+            <Button variant="outline" size="sm" onClick={signOut} className="gap-2">
               <LogOut className="h-4 w-4" /> {t("nav.signout")}
             </Button>
           )}

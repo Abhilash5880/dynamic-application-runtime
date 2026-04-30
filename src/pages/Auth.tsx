@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Sparkles, Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -50,14 +50,9 @@ const Auth = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-mesh flex flex-col">
-      <div className="container flex justify-between items-center py-4">
-        <div className="flex items-center gap-2 font-bold">
-          <span className="grid place-items-center h-8 w-8 rounded-lg bg-gradient-primary text-primary-foreground shadow-elegant">
-            <Sparkles className="h-4 w-4" />
-          </span>
-          Forge
-        </div>
+    <div className="min-h-screen bg-background flex flex-col">
+      <div className="container mx-auto flex justify-between items-center py-4 px-4">
+        <div className="text-lg font-semibold">Dynamic Application Runtime</div>
         <LocaleSwitcher />
       </div>
       <main className="flex-1 grid place-items-center px-4 pb-10">
@@ -67,7 +62,7 @@ const Auth = () => {
           transition={{ duration: 0.4 }}
           className="w-full max-w-md"
         >
-          <Card className="p-8 shadow-elegant border-border/60 backdrop-blur-sm">
+          <Card className="p-8 border border-border bg-card">
             <h1 className="text-2xl font-bold mb-1">
               {mode === "signin" ? t("auth.signin") : t("auth.signup")}
             </h1>
@@ -81,7 +76,7 @@ const Auth = () => {
                 <Label htmlFor="password">{t("auth.password")}</Label>
                 <Input id="password" type="password" required minLength={6} value={password} onChange={(e) => setPassword(e.target.value)} />
               </div>
-              <Button type="submit" disabled={busy} className="w-full bg-gradient-primary hover:opacity-90 transition-opacity gap-2">
+              <Button type="submit" disabled={busy} className="w-full gap-2">
                 {busy && <Loader2 className="h-4 w-4 animate-spin" />}
                 {mode === "signin" ? t("auth.signin") : t("auth.signup")}
               </Button>

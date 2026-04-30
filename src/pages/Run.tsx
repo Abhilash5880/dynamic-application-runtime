@@ -36,9 +36,9 @@ const Run = () => {
   }, [id]);
 
   return (
-    <div className="min-h-screen bg-gradient-mesh">
+    <div className="min-h-screen bg-background">
       <TopBar />
-      <main className="container py-6 max-w-6xl">
+      <main className="container mx-auto py-6 max-w-6xl px-4">
         <Link to="/apps">
           <Button variant="ghost" size="sm" className="mb-4 gap-1.5">
             <ArrowLeft className="h-4 w-4" /> {t("nav.apps")}

@@ -4,88 +4,65 @@
 
 @layer base {
   :root {
-    --background: 240 20% 99%;
-    --foreground: 240 30% 10%;
+    --background: 210 25% 98%;
+    --foreground: 210 16% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 30% 10%;
+    --card-foreground: 210 16% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 30% 10%;
+    --popover-foreground: 210 16% 12%;
 
-    --primary: 252 95% 60%;
+    --primary: 212 88% 54%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 280 95% 70%;
 
-    --secondary: 240 15% 96%;
-    --secondary-foreground: 240 30% 15%;
+    --secondary: 141 58% 47%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 240 15% 95%;
-    --muted-foreground: 240 10% 45%;
+    --accent: 45 96% 55%;
+    --accent-foreground: 210 16% 12%;
 
-    --accent: 190 95% 55%;
-    --accent-foreground: 240 30% 10%;
-
-    --destructive: 0 85% 60%;
+    --destructive: 4 85% 58%;
     --destructive-foreground: 0 0% 100%;
 
-    --success: 150 70% 45%;
+    --success: 145 63% 41%;
     --success-foreground: 0 0% 100%;
 
-    --border: 240 15% 90%;
-    --input: 240 15% 92%;
-    --ring: 252 95% 60%;
+    --border: 210 20% 88%;
+    --input: 210 20% 95%;
+    --ring: 212 88% 70%;
 
-    --radius: 0.75rem;
+    --muted: 210 20% 94%;
+    --muted-foreground: 210 12% 44%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(252 95% 60%), hsl(280 95% 70%));
-    --gradient-mesh: radial-gradient(at 20% 0%, hsl(252 95% 60% / 0.15) 0px, transparent 50%),
-                     radial-gradient(at 80% 50%, hsl(190 95% 55% / 0.12) 0px, transparent 50%),
-                     radial-gradient(at 40% 100%, hsl(280 95% 70% / 0.12) 0px, transparent 50%);
-    --shadow-elegant: 0 20px 50px -20px hsl(252 95% 60% / 0.25);
-    --shadow-card: 0 4px 20px -8px hsl(240 30% 10% / 0.08);
+    --radius: 0.5rem;
 
-    --sidebar-background: 240 20% 99%;
-    --sidebar-foreground: 240 30% 15%;
-    --sidebar-primary: 252 95% 60%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 15% 95%;
-    --sidebar-accent-foreground: 240 30% 15%;
-    --sidebar-border: 240 15% 90%;
-    --sidebar-ring: 252 95% 60%;
+    --shadow-elegant: 0 10px 24px rgba(60, 64, 67, 0.12);
+    --shadow-card: 0 1px 2px rgba(60, 64, 67, 0.08);
   }
 
   .dark {
-    --background: 240 30% 6%;
-    --foreground: 240 20% 95%;
-    --card: 240 25% 9%;
-    --card-foreground: 240 20% 95%;
-    --popover: 240 25% 9%;
-    --popover-foreground: 240 20% 95%;
-    --primary: 252 95% 65%;
+    --background: 210 16% 14%;
+    --foreground: 210 50% 96%;
+    --card: 210 20% 18%;
+    --card-foreground: 210 50% 96%;
+    --popover: 210 20% 18%;
+    --popover-foreground: 210 50% 96%;
+    --primary: 212 88% 64%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 280 95% 70%;
-    --secondary: 240 20% 14%;
-    --secondary-foreground: 240 20% 95%;
-    --muted: 240 20% 14%;
-    --muted-foreground: 240 15% 65%;
-    --accent: 190 95% 55%;
-    --accent-foreground: 240 30% 10%;
-    --destructive: 0 70% 55%;
+    --secondary: 141 58% 57%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 45 96% 55%;
+    --accent-foreground: 210 16% 12%;
+    --destructive: 4 85% 58%;
     --destructive-foreground: 0 0% 100%;
-    --success: 150 70% 45%;
+    --success: 145 63% 41%;
     --success-foreground: 0 0% 100%;
-    --border: 240 20% 18%;
-    --input: 240 20% 16%;
-    --ring: 252 95% 65%;
-    --sidebar-background: 240 25% 9%;
-    --sidebar-foreground: 240 20% 95%;
-    --sidebar-primary: 252 95% 65%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 20% 14%;
-    --sidebar-accent-foreground: 240 20% 95%;
-    --sidebar-border: 240 20% 18%;
-    --sidebar-ring: 252 95% 65%;
+    --border: 210 16% 28%;
+    --input: 210 16% 24%;
+    --ring: 212 88% 70%;
+    --muted: 210 16% 20%;
+    --muted-foreground: 210 16% 76%;
   }
 }
 
@@ -99,14 +76,9 @@
 }
 
 @layer utilities {
-  .bg-gradient-primary { background: var(--gradient-primary); }
-  .bg-gradient-mesh { background-image: var(--gradient-mesh); }
+  .bg-gradient-primary { background-color: hsl(var(--primary)); }
+  .bg-gradient-mesh { background-color: hsl(var(--background)); }
   .shadow-elegant { box-shadow: var(--shadow-elegant); }
   .shadow-card { box-shadow: var(--shadow-card); }
-  .text-gradient {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
+  .text-gradient { color: hsl(var(--primary)); background: none; }
 }

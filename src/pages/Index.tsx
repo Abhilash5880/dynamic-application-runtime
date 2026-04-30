@@ -44,13 +44,10 @@ const Index = () => {
   }, [navigate]);
 
   return (
-    <div className="min-h-screen bg-gradient-mesh">
-      <header className="container flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 font-bold text-lg">
-          <span className="grid place-items-center h-8 w-8 rounded-lg bg-gradient-primary text-primary-foreground shadow-elegant">
-            <Sparkles className="h-4 w-4" />
-          </span>
-          Forge
+    <div className="min-h-screen bg-background">
+      <header className="container mx-auto flex h-16 items-center justify-between px-4">
+        <Link to="/" className="text-lg font-bold">
+          Dynamic Application Runtime
         </Link>
         <div className="flex items-center gap-2">
           <LocaleSwitcher />
@@ -58,7 +55,7 @@ const Index = () => {
             <Button variant="ghost" size="sm">{t("auth.signin")}</Button>
           </Link>
           <Link to="/auth">
-            <Button size="sm" className="bg-gradient-primary hover:opacity-90 transition-opacity">
+            <Button size="sm">
               Get started
             </Button>
           </Link>
@@ -73,7 +70,7 @@ const Index = () => {
             transition={{ duration: 0.6 }}
             className="text-5xl sm:text-7xl font-bold tracking-tight"
           >
-            Ship apps from <span className="text-gradient">JSON</span>.
+            Ship apps from <span className="text-primary">JSON</span>.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -81,7 +78,7 @@ const Index = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg sm:text-xl text-muted-foreground mt-6 max-w-2xl mx-auto"
           >
-            Forge is a tiny app generator. Describe entities and views in JSON,
+            Dynamic Application Runtime is a tiny app generator. Describe entities and views in JSON,
             and it renders a working frontend, backend and database — secured per user.
           </motion.p>
           <motion.div
@@ -91,7 +88,7 @@ const Index = () => {
             className="mt-8 flex items-center justify-center gap-3"
           >
             <Link to="/auth">
-              <Button size="lg" className="bg-gradient-primary hover:opacity-90 transition-opacity gap-2">
+              <Button size="lg" className="gap-2">
                 Try it free <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
@@ -99,7 +96,7 @@ const Index = () => {
         </section>
 
         <section className="container pb-20 grid lg:grid-cols-2 gap-8 items-center">
-          <Card className="p-6 shadow-elegant border-border/60 overflow-hidden">
+          <Card className="p-6 border border-border overflow-hidden">
             <div className="text-xs uppercase tracking-wider text-muted-foreground mb-3">config.json</div>
             <pre className="text-xs sm:text-sm font-mono leading-relaxed whitespace-pre-wrap text-foreground/90">
               <code>{SAMPLE}</code>
@@ -130,7 +127,7 @@ const Index = () => {
                 transition={{ duration: 0.4, delay: i * 0.05 }}
               >
                 <Card className="p-6 shadow-card h-full">
-                  <div className="grid place-items-center h-10 w-10 rounded-lg bg-gradient-primary text-primary-foreground mb-4">
+                  <div className="grid place-items-center h-10 w-10 rounded-md bg-primary text-primary-foreground mb-4">
                     <f.icon className="h-5 w-5" />
                   </div>
                   <h3 className="font-semibold text-lg">{f.title}</h3>
